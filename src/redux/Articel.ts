@@ -51,3 +51,10 @@ export interface IHeader {
     }
   ];
 }
+
+export interface IImagebox {
+  _id: "668727a47446f71aaf874a69";
+  title: "CREDO INVESTMENTS FZE";
+  paragraph: "Your search for the luxury home in Dubai ends here.";
+  button: "Know more";
+}
