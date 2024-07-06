@@ -1,6 +1,11 @@
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "./hook";
-import { fetchHeder, fetchImagebox } from "./SliceApi";
+import {
+  fetchBanner,
+  fetchFeature,
+  fetchHeder,
+  fetchImagebox,
+} from "./SliceApi";
 
 const SliceData = () => {
   const dispatch = useAppDispatch();
@@ -8,6 +13,8 @@ const SliceData = () => {
   useEffect(() => {
     dispatch(fetchHeder());
     dispatch(fetchImagebox());
+    dispatch(fetchBanner());
+    dispatch(fetchFeature());
   }, [dispatch]);
   return (
     <>

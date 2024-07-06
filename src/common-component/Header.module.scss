@@ -120,7 +120,7 @@
     height: 100%;
     left: 0;
     padding-top: 60px;
-    overflow: hidden;
+    overflow-y: scroll;
     transition: 0.6s;
     z-index: 999999999;
 
@@ -259,15 +259,17 @@
       display: block !important;
       position: absolute;
       left: 17px;
-      top: 0;
+      top: 27px;
       cursor: pointer;
+      font-weight: 500;
     }
     .button h3 {
       display: block;
       position: absolute;
       right: 17px;
-      top: 0;
+      top: 27px;
       cursor: pointer;
+      font-weight: 500;
     }
   }
 }
@@ -289,15 +291,17 @@
       display: block !important;
       position: absolute;
       left: 17px;
-      top: 0;
+      top: 27px;
       cursor: pointer;
+      font-weight: 500;
     }
     .button h3 {
       display: block;
       position: absolute;
       right: 17px;
-      top: 0;
+      top: 27px;
       cursor: pointer;
+      font-weight: 500;
     }
   }
 }

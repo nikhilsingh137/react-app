@@ -1,0 +1,237 @@
+.feature {
+  display: block;
+  width: 100%;
+  background: #f6f6ed;
+  .header {
+    display: flex;
+    gap: 20px;
+    width: 1150px;
+    margin: auto;
+    align-items: center;
+    padding-top: 10px;
+    i {
+      width: 35%;
+      height: 2px;
+      background: #ddd;
+      display: block;
+    }
+    span {
+      width: 35%;
+      height: 2px;
+      background: #ddd;
+      display: block;
+    }
+    h2 {
+      color: #555;
+      font-size: 27px;
+      font-weight: 500;
+    }
+  }
+  .detail {
+    display: flex;
+    margin-top: 40px;
+    align-items: center;
+    .data {
+      width: 50%;
+      .frame {
+        padding-right: 20px;
+        padding-left: 20px;
+        width: 85%;
+        margin: auto;
+        text-align: center;
+        h2 {
+          color: #555;
+          font-size: 65px;
+          font-weight: 700;
+          letter-spacing: 3px;
+        }
+        p {
+          color: rgb(119 119 119);
+          font-weight: 400;
+          font-size: 18px;
+          margin-top: 25px;
+          line-height: 27px;
+        }
+        a {
+          color: #aa8a4b;
+          font-size: 17px;
+          text-transform: uppercase;
+          text-decoration: none;
+          margin-top: 35px;
+          display: inline-block;
+          position: relative;
+          transition: 0.6s;
+          font-weight: 500;
+          &::after {
+            position: absolute;
+            width: 65%;
+            content: "";
+            height: 2px;
+            left: 21px;
+            background: #aa8a4b;
+            transition: 0.6s;
+            bottom: -5px;
+          }
+          &:hover::after {
+            width: 100%;
+            left: 0;
+            background: #000;
+          }
+          &:hover {
+            color: #000;
+          }
+        }
+      }
+    }
+    .image {
+      width: 50%;
+      span {
+        display: block;
+        width: 100%;
+        height: 580px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .file {
+        display: flex;
+        background: #fff;
+        padding: 10px 0px;
+        .area {
+          border-right: solid 1px #ddd;
+          width: 32%;
+          flex-direction: column;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 150px;
+          h2 {
+            font-size: 20px;
+            color: #555;
+            font-weight: 500;
+          }
+          h3 {
+            color: rgb(119 119 119);
+            font-weight: 400;
+            font-size: 15px;
+            margin-top: 15px;
+          }
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-device-width: 992px) and (max-device-width: 1249px) {
+  .header {
+    width: 100% !important;
+    padding: 0px 20px;
+    justify-content: center;
+    i {
+      width: 33% !important;
+    }
+    span {
+      width: 33% !important;
+    }
+  }
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 991px) {
+  .header {
+    width: 100% !important;
+    justify-content: center;
+    i {
+      width: 32% !important;
+    }
+    span {
+      width: 32% !important;
+    }
+    h2 {
+      font-size: 22px !important;
+    }
+  }
+  .detail {
+    flex-wrap: wrap;
+    .data {
+      width: 100% !important;
+    }
+    .image {
+      width: 100% !important;
+      margin-top: 50px;
+    }
+  }
+}
+
+@media screen and (min-device-width: 500px) and (max-device-width: 767px) {
+  .header {
+    width: 100% !important;
+    justify-content: center;
+    i {
+      width: 25% !important;
+    }
+    span {
+      width: 25% !important;
+    }
+    h2 {
+      font-size: 18px !important;
+    }
+  }
+  .detail {
+    flex-wrap: wrap;
+    .data {
+      width: 100% !important;
+      .frame {
+        h2 {
+          font-size: 55px !important;
+        }
+      }
+    }
+    .image {
+      width: 100% !important;
+      margin-top: 50px;
+    }
+  }
+}
+
+@media screen and (min-device-width: 360px) and (max-device-width: 499px) {
+  .header {
+    width: 100% !important;
+    justify-content: center;
+    i {
+      width: 20% !important;
+    }
+    span {
+      width: 20% !important;
+    }
+    h2 {
+      font-size: 16px !important;
+    }
+  }
+  .detail {
+    flex-wrap: wrap;
+    .data {
+      width: 100% !important;
+      .frame {
+        h2 {
+          font-size: 38px !important;
+        }
+      }
+    }
+    .image {
+      width: 100% !important;
+      margin-top: 50px;
+    }
+    .file {
+      flex-wrap: wrap;
+      .area {
+        width: 100% !important;
+        border-bottom: solid 1px #ddd;
+      }
+    }
+  }
+}
