@@ -17,7 +17,7 @@ const Banner = () => {
             <div className={Style.content}>
               <h2>{item.title}</h2>
               <p>{item.paragraph}</p>
-              <a href={item.url}>{item.button}</a>
+              <a href={`about${item.url}`}>{item.button}</a>
             </div>
           );
         })}

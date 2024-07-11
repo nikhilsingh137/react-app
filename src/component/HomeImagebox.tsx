@@ -10,6 +10,7 @@ const HomeImagebox = () => {
   useEffect(() => {
     dispatch(fetchImagebox());
   }, [dispatch]);
+
   return (
     <div className={Style.homeimagebox}>
       <span>
@@ -21,7 +22,7 @@ const HomeImagebox = () => {
                 <>
                   <h2>{item.title}</h2>
                   <p>{item.paragraph}</p>
-                  <a href="/about-us/">{item.button}</a>
+                  <a href={`/about${item.url}`}>{item.button}</a>
                 </>
               );
             })}

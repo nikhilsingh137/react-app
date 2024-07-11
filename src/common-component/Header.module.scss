@@ -1,9 +1,10 @@
 .container {
   position: absolute;
   top: 0;
-  z-index: 99;
+  z-index: 999999;
   width: 100%;
   left: 0;
+  background-color: rgba(7, 15, 43, 0.622);
   .Content {
     display: flex;
     width: 1150px;
@@ -28,11 +29,84 @@
         list-style: none;
         li {
           padding: 10px 0px;
+          &:hover .drop {
+            height: 400px;
+          }
+
           a {
             text-decoration: none;
             font-size: 16px;
             color: #fff;
             font-weight: 500;
+          }
+
+          .drop {
+            position: absolute;
+            top: 75px;
+            width: 100%;
+            left: 0;
+            height: 0px;
+            background: #fff;
+            box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+            z-index: 11;
+            overflow: hidden;
+            transition: 0.6s;
+
+            .project {
+              display: flex;
+              justify-content: space-between;
+              width: 1150px;
+              margin: auto;
+              padding-top: 60px;
+              .detail {
+                width: 20%;
+                h2 {
+                  font-size: 22px;
+                  color: #aa8a4b;
+                  font-weight: 500;
+                }
+                ul {
+                  display: block;
+                  margin-top: 20px;
+                  padding: 0;
+                  list-style: none;
+                  li {
+                    line-height: 35px;
+                    a {
+                      text-decoration: none;
+                      font-size: 16px;
+                      color: #666;
+                      font-weight: 400;
+                    }
+                  }
+                }
+              }
+              .collection {
+                width: 75%;
+                display: flex;
+                justify-content: space-between;
+                strong {
+                  width: 31%;
+                  display: block;
+
+                  img {
+                    width: 100%;
+                  }
+                  h2 {
+                    font-size: 18px;
+                    color: #aa8a4b;
+                    font-weight: 500;
+                    margin-top: 20px;
+                  }
+                  p {
+                    font-size: 15px;
+                    color: #666;
+                    font-weight: 400;
+                    margin-top: 5px;
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -40,7 +114,7 @@
     .icon {
       display: flex;
       gap: 10px;
-
+      position: relative;
       .whatsapp {
         border-right: solid 1px #ddd;
         padding: 0px 15px;
@@ -50,47 +124,104 @@
           color: #fff;
         }
       }
-      .envelope {
-        padding: 0px 15px;
-        border: solid 1px #fff;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        text-decoration: none;
-        color: #fff;
-        font-size: 14px;
-        font-weight: 500;
-        text-transform: uppercase;
-        i {
-          font-size: 16px;
+
+      span {
+        height: 30px;
+        position: relative;
+        .envelope {
+          padding: 5px 15px;
+          border: solid 1px #fff;
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          text-decoration: none;
           color: #fff;
-        }
-      }
-      .input {
-        display: block;
-        border-color: hsla(0, 0%, 100%, 0.09);
-        background-color: hsla(0, 0%, 100%, 0.2);
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        padding: 0px 10px;
-        input {
-          border: none;
-          background: none;
-          outline: none;
-          width: 100px;
-          color: #fff;
-          text-transform: capitalize;
+          font-size: 14px;
           font-weight: 500;
-          &::placeholder {
+          text-transform: uppercase;
+          transition: 0.6s;
+          i {
+            font-size: 16px;
             color: #fff;
-            text-transform: capitalize;
-            font-weight: 500;
+          }
+          &:hover {
+            background: #aa8a4b;
+            color: #fff;
           }
         }
-        i {
+        h2 {
+          position: absolute;
+          display: none;
+          top: 49px;
+          left: 20px;
+          font-size: 16px;
+          background: #000;
           color: #fff;
+          font-weight: 400;
+          padding: 7px 15px;
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 35%;
+            margin-left: -15px;
+            margin-top: -15px;
+            width: 0;
+            z-index: 1;
+            height: 0;
+            border-bottom: solid 15px #000;
+            border-left: solid 15px transparent;
+            border-right: solid 15px transparent;
+          }
+        }
+        &:hover h2 {
+          display: block;
+        }
+      }
+
+      .input {
+        position: relative;
+        display: block;
+        form {
+          border-color: hsla(0, 0%, 100%, 0.09);
+          background-color: hsla(0, 0%, 100%, 0.2);
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+          padding: 7px 10px;
+          input {
+            border: none;
+            background: none;
+            outline: none;
+            width: 100px;
+            color: #fff;
+            font-weight: 500;
+            &::placeholder {
+              color: #fff;
+              text-transform: capitalize;
+              font-weight: 500;
+            }
+          }
+          i {
+            color: #fff;
+          }
+        }
+        .drop {
+          position: absolute;
+          left: 0;
+          background: #fff;
+          width: 100%;
+          z-index: 11;
+          border-radius: 8px;
+          top: 40px;
+          a {
+            display: block;
+            padding: 5px;
+            text-decoration: none;
+            color: #666;
+            border-bottom: solid 1px #ddd;
+          }
         }
       }
     }
@@ -123,24 +254,43 @@
     overflow-y: scroll;
     transition: 0.6s;
     z-index: 999999999;
-
     .inputbox {
-      display: block;
       border-bottom: solid 1px #ddd;
       padding: 20px 20px;
-      input {
-        height: 40px;
-        width: 210px;
-        padding: 0px 8px;
-        border-radius: 20px;
-        border: solid 1px #fff;
-        outline: none;
-        background: hsla(0, 0%, 100%, 0.2);
-        color: #fff;
-        text-transform: capitalize;
-        font-weight: 500;
-        &::placeholder {
+      position: relative;
+      form {
+        display: block;
+
+        input {
+          height: 40px;
+          width: 210px;
+          padding: 0px 8px;
+          border-radius: 20px;
+          border: solid 1px #fff;
+          outline: none;
+          background: hsla(0, 0%, 100%, 0.2);
           color: #fff;
+          text-transform: capitalize;
+          font-weight: 500;
+          &::placeholder {
+            color: #fff;
+          }
+        }
+      }
+      .drop {
+        position: absolute;
+        left: 20px;
+        background: #fff;
+        width: 83%;
+        z-index: 11;
+        border-radius: 8px;
+        top: 63px;
+        a {
+          display: block;
+          padding: 5px;
+          text-decoration: none;
+          color: #666;
+          border-bottom: solid 1px #ddd;
         }
       }
     }
@@ -155,11 +305,51 @@
           line-height: 40px;
           padding: 10px 20px;
           border-bottom: solid 1px #ddd;
+          position: relative;
+          &:hover .drop {
+            height: 400px;
+          }
           a {
             text-decoration: none;
             font-size: 18px;
             color: #fff;
             font-weight: 500;
+          }
+          .drop {
+            position: absolute;
+            top: 62px;
+            width: 100%;
+            left: 0;
+            height: 0px;
+            background: #000;
+            box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+            z-index: 1111;
+            overflow: hidden;
+            transition: 0.6s;
+            .detail {
+              h2 {
+                display: none;
+              }
+              ul {
+                display: block;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                li {
+                  line-height: 35px;
+
+                  a {
+                    text-decoration: none;
+                    font-size: 16px;
+                    color: #666;
+                    font-weight: 400;
+                  }
+                }
+              }
+            }
+            .collection {
+              display: none;
+            }
           }
         }
       }
@@ -200,6 +390,15 @@
       }
     }
   }
+  .overlay {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
 }
 
 @media screen and (min-device-width: 1100px) and (max-device-width: 1250px) {
@@ -211,17 +410,36 @@
     .icon {
       padding-right: 20px;
     }
+    .button {
+      display: none !important;
+    }
+
+    .project {
+      width: 100% !important;
+      .detail {
+        padding: 0px 20px;
+        width: 21% !important;
+        h2 {
+          color: #000 !important;
+          font-size: 21px !important;
+        }
+      }
+      .collection {
+        padding: 0px 20px;
+      }
+    }
   }
 }
 
 @media screen and (min-device-width: 991px) and (max-device-width: 1099px) {
   .Content {
     width: 100% !important;
+    gap: 44px !important;
     .logo {
       padding-left: 20px;
       width: 12%;
       img {
-        width: 120px !important;
+        width: 100% !important;
         height: 70px !important;
       }
     }
@@ -235,9 +453,26 @@
     }
     .icon {
       padding-right: 20px;
-      width: 36%;
+      width: 39%;
       gap: 0px !important;
       justify-content: space-between;
+    }
+    .button {
+      display: none !important;
+    }
+    .project {
+      width: 100% !important;
+      .detail {
+        padding: 0px 20px;
+        width: 21% !important;
+        h2 {
+          color: #000 !important;
+          font-size: 21px !important;
+        }
+      }
+      .collection {
+        padding: 0px 20px;
+      }
     }
   }
 }

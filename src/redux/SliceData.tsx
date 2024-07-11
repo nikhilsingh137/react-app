@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "./hook";
 import {
+  fetchAbout,
   fetchBanner,
+  fetchCity,
   fetchFeature,
+  fetchFooter,
   fetchHeder,
   fetchImagebox,
 } from "./SliceApi";
@@ -15,6 +18,9 @@ const SliceData = () => {
     dispatch(fetchImagebox());
     dispatch(fetchBanner());
     dispatch(fetchFeature());
+    dispatch(fetchCity());
+    dispatch(fetchAbout());
+    dispatch(fetchFooter());
   }, [dispatch]);
   return (
     <>

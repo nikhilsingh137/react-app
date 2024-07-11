@@ -1,35 +1,10 @@
 .feature {
   display: block;
   width: 100%;
-  background: #f6f6ed;
-  .header {
-    display: flex;
-    gap: 20px;
-    width: 1150px;
-    margin: auto;
-    align-items: center;
-    padding-top: 10px;
-    i {
-      width: 35%;
-      height: 2px;
-      background: #ddd;
-      display: block;
-    }
-    span {
-      width: 35%;
-      height: 2px;
-      background: #ddd;
-      display: block;
-    }
-    h2 {
-      color: #555;
-      font-size: 27px;
-      font-weight: 500;
-    }
-  }
+  background-color: rgba(162, 199, 245, 0.297);
+
   .detail {
     display: flex;
-    margin-top: 40px;
     align-items: center;
     .data {
       width: 50%;
@@ -38,7 +13,6 @@
         padding-left: 20px;
         width: 85%;
         margin: auto;
-        text-align: center;
         h2 {
           color: #555;
           font-size: 65px;
@@ -138,11 +112,9 @@
     span {
       width: 33% !important;
     }
-  }
-  .data .frame {
-    width: 100% !important;
-    h2 {
-      word-wrap: break-word;
+    .frame {
+      width: 100% !important;
+      margin-top: 20px !important;
     }
   }
 }
@@ -165,6 +137,10 @@
     flex-wrap: wrap;
     .data {
       width: 100% !important;
+      .frame {
+        width: 100% !important;
+        margin-top: 20px !important;
+      }
     }
     .image {
       width: 100% !important;
@@ -192,6 +168,8 @@
     .data {
       width: 100% !important;
       .frame {
+        width: 100% !important;
+        margin-top: 20px !important;
         h2 {
           font-size: 55px !important;
         }
@@ -223,6 +201,8 @@
     .data {
       width: 100% !important;
       .frame {
+        width: 100% !important;
+        margin-top: 20px !important;
         h2 {
           font-size: 38px !important;
         }

@@ -1,5 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { IBanner, IFeature, IHeader, IImagebox } from "./Articel";
+import {
+  IAbout,
+  IBanner,
+  ICity,
+  IFeature,
+  IFooter,
+  IHeader,
+  IImagebox,
+} from "./Articel";
 
 export interface IType {
   isloading: boolean;
@@ -8,6 +16,9 @@ export interface IType {
   error: boolean;
   bannerData: Array<IBanner>;
   featureData: Array<IFeature>;
+  cityData: Array<ICity>;
+  aboutData: Array<IAbout>;
+  footerData: Array<IFooter>;
 }
 
 export const fetchHeder = createAsyncThunk("fetchHeder", async () => {
@@ -27,6 +38,18 @@ export const fetchFeature = createAsyncThunk("fetchFeature", async () => {
   const featureData = await fetch("http://localhost:5000/feature");
   return featureData.json();
 });
+export const fetchCity = createAsyncThunk("fetchCity", async () => {
+  const cityData = await fetch("http://localhost:5000/city");
+  return cityData.json();
+});
+export const fetchAbout = createAsyncThunk("fetchAbout", async () => {
+  const aboutData = await fetch("http://localhost:5000/about");
+  return aboutData.json();
+});
+export const fetchFooter = createAsyncThunk("fetchFooter", async () => {
+  const footerData = await fetch("http://localhost:5000/footer");
+  return footerData.json();
+});
 
 export const initialState: IType = {
   isloading: false,
@@ -35,6 +58,9 @@ export const initialState: IType = {
   imageData: [],
   bannerData: [],
   featureData: [],
+  cityData: [],
+  aboutData: [],
+  footerData: [],
 };
 
 export const SliceApi = createSlice({
@@ -56,6 +82,15 @@ export const SliceApi = createSlice({
     });
     builder.addCase(fetchFeature.fulfilled, (state, action) => {
       state.featureData = action.payload;
+    });
+    builder.addCase(fetchCity.fulfilled, (state, action) => {
+      state.cityData = action.payload;
+    });
+    builder.addCase(fetchAbout.fulfilled, (state, action) => {
+      state.aboutData = action.payload;
+    });
+    builder.addCase(fetchFooter.fulfilled, (state, action) => {
+      state.footerData = action.payload;
     });
     builder.addCase(fetchHeder.rejected, (state, action) => {
       state.error = true;
